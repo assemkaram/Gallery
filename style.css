@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+}
+
+body {
+    height: 100svh;
+    max-width:100svw ;
+    min-width: 320px;
+    display: grid;
+    font-family: "Indie Flower", cursive;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas: 
+    "h h"
+    "a m"
+    "a f";
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgb(36, 36, 93);
+    color: white;
+    align-items: center;
+    grid-area: h;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: white;
+}
+
+aside {
+    background-color: rgb(110, 110, 211);
+    color: white;
+    grid-area: a;
+}
+
+main {
+    grid-area: m;
+    /* display: grid; */
+    padding: 10px;
+}
+.all-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background-color: rgb(36, 36, 93);
+    text-align: center;
+    padding: 20px;
+    grid-area: f;
+    color: white;
+}
+
+
+@media(max-width:768px){
+    aside{
+        display: none;
+    }
+    body {
+        grid-template-areas:
+        "h h"
+        "m m"
+        "f f"
+        ;
+    }
+}
+
+@media(max-width:430px) {
+    nav {
+        display: none;
+    }
+}
